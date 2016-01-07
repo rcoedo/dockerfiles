@@ -8,3 +8,5 @@ Thanks to:
 * dperson/samba
 * timhaak/docker-plex
 * sameersbn/docker-bind
+* dst_academy/server
+* kalhartt/docker-tshock

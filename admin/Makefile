@@ -8,7 +8,7 @@ build:
 	sudo docker build --rm -t $(IMAGE) .
 
 create:
-	sudo docker run --privileged=true --restart=always --name $(NAME) -d -h $(NAME) -v $(CONFIG):/config -p 80:80 $(IMAGE):latest
+	sudo docker run -i -t --privileged=true --restart=always --name $(NAME) -d -h $(NAME) -v /var/run/docker.sock:/run/docker.sock -v $(CONFIG):/config -p 80:80 $(IMAGE):latest /bin/bash
 
 clean:
 	sudo docker rm $(NAME)

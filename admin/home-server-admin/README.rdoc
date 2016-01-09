@@ -1,0 +1,3 @@
+== README
+
+This is a simple web app for administrating the docker containers. It's built using Ruby on Rails, React and Redux.

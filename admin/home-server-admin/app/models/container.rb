@@ -8,4 +8,5 @@ class Container
   attr_accessor :since
   attr_accessor :status
   attr_accessor :ports
+  attr_accessor :command
 end

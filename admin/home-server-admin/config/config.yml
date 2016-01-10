@@ -1,0 +1,11 @@
+defaults: &defaults
+  docker_url: localhost:5000
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

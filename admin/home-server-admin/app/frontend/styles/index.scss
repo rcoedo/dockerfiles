@@ -1,0 +1,43 @@
+body { margin: 0; background-image: linear-gradient(90deg, deeppink 0%, DarkTurquoise 100%); }
+* { box-sizing: border-box }
+.wrapper { margin: 0 1rem; padding: 1rem 0;}
+
+.docker-container-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.docker-container-list .item {
+    padding: 10px;
+    margin: 10px;
+    flex: 1 0 300px;
+
+    background: black;
+    color: white;
+
+    height: 200px;
+}
+
+/* @media screen and (min-width: 600px) { */
+/*     .docker-container-list { */
+/*         flex-direction: row; */
+/*     } */
+
+/*     .docker-container-list .item { */
+/*         flex: 0 0 calc(50% - 20px); */
+/*     } */
+
+/*     @media screen and (min-width: 1000px) { */
+/*         .docker-container-list .item { */
+/*             flex: 0 0 calc(33% - 20px); */
+/*         } */
+
+/*         @media screen and (min-width: 1400px) { */
+/*             .docker-container-list .item { */
+/*                 flex: 0 0 calc(25% - 20px); */
+/*             } */
+/*         } */
+
+/*     } */
+/* } */

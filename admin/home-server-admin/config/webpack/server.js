@@ -1,20 +1,23 @@
 var webpack = require("webpack");
 var WebpackDevServer = require("webpack-dev-server");
-var config = require("./webpack.config.js");
+var config = require("./webpack.config.dev");
+
+config.devtool = "eval";
 
 config.plugins.push(new webpack.HotModuleReplacementPlugin());
 
 config.entry.unshift("webpack/hot/only-dev-server");
 config.entry.unshift("webpack-dev-server/client?http://localhost:4000");
 
+config.output.filename = "main.bundle.js";
 config.output.publicPath = "http://localhost:4000/";
 
-
 var getLoader = function(config, loaderId) {
-  return config.module.loaders.find(function(loader) {return loader.id === loaderId});
-}
+  return config.module.loaders.find(function(loader) {return loader.id === loaderId;});
+};
 
-if (loader = getLoader(config, "js")) {
+var loader;
+if ((loader = getLoader (config, "js"))) {
   loader.loaders.unshift("react-hot");
 }
 

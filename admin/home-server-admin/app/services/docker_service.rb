@@ -1,13 +1,11 @@
-require "open3"
-require "docker_command"
+require "json"
 
 class DockerService
   def initialize
+    @connection = Docker::Connection.new(ENV["docker_url"])
   end
 
   def get_containers
-    out, err = DockerCommand.ps()
-    if err then raise err end
-    DockerParser.parse_ps(out)
+    JSON.parse(Docker.get_containers (@connection))
   end
 end

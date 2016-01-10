@@ -1,32 +1,20 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { add } from "app/actions";
+import ContainerList from "app/components/container";
 
 class App extends Component {
-  constructor() {
-    super();
-    this.add = this.add.bind(this);
-  }
-
-  add(event) {
-    event.preventDefault();
-    this.props.dispatch(add());
-  }
-
   render() {
-    const { count } = this.props
-    return(
-      <div>
-        <button onClick={this.add} type="button">Add</button>&nbsp;
-        {count}
-      </div>
+    //this.props.dispatch(add());
+    const { containers } = this.props
+    return (
+      <ContainerList containers={containers}/>
     );
   }
 }
 
 function stateToProps(state) {
   return {
-    count: state.count
+    containers: state.containers
   };
 }
 

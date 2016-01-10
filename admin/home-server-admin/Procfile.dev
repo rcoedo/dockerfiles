@@ -1,3 +1,4 @@
-web: rails server
-hot: npm run hot
+web: PORT=3000 rails server
+hot: PORT=4000 npm run hot
+docker: PORT=5000 npm run docker
 

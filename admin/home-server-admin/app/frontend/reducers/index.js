@@ -1,18 +1,15 @@
 import { combineReducers } from "redux";
-import { ADD_ACTION } from "app/actions";
-import { routeReducer } from "redux-simple-router";
+import { routeReducer } from "react-router-redux";
 
-function count(state = 0, action) {
+function containers(state = [], action) {
   switch (action.type) {
-  case ADD_ACTION:
-    return state + 1;
   default:
     return state;
   }
 }
 
 const rootReducer = combineReducers({
-  count,
+  containers,
   routing: routeReducer
 });
 

@@ -1,43 +1,88 @@
-body { margin: 0; background-image: linear-gradient(90deg, deeppink 0%, DarkTurquoise 100%); }
-* { box-sizing: border-box }
-.wrapper { margin: 0 1rem; padding: 1rem 0;}
+@import url(https://fonts.googleapis.com/css?family=Lato);
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
 
-.docker-container-list {
+body {
+    font-family: Lato;
+    background-image: linear-gradient(90deg, #e67e22 0%, #d35400 100%);
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+* { box-sizing: border-box }
+
+.wrapper {
+    margin: 0 1em; padding: 1em 0;
+}
+
+.item-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
-.docker-container-list .item {
-    padding: 10px;
+.item-list > * {
+    border-radius: 10px;
+    padding: 0.5em;
     margin: 10px;
-    flex: 1 0 300px;
+    text-align: center;
 
-    background: black;
+    display: flex;
+    flex: 1 0 300px;
+    flex-flow: column;
+
+    background: rgba(0, 0, 0, 0.2);
     color: white;
 
     height: 200px;
+
+    & > h1 {
+        font-size: 2em;
+        flex: 0 0 35px;
+    }
+
+    & > h2 {
+        font-size: 0.75em;
+        flex: 0 0 30px;
+    }
+
+    & > ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    & > .status {
+        flex: 0 0 30px;
+
+        & > li + li {
+            padding-left: 0.5em;
+        }
+    }
+
+    & > .buttons {
+        flex: 0 0 50px;
+        width: 100%;
+        display: flex;
+        margin: auto;
+
+        & > li {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex: 1;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            margin: 0 10px;
+
+            & a {
+                color: white;
+                display: block;
+            }
+        }
+    }
 }
-
-/* @media screen and (min-width: 600px) { */
-/*     .docker-container-list { */
-/*         flex-direction: row; */
-/*     } */
-
-/*     .docker-container-list .item { */
-/*         flex: 0 0 calc(50% - 20px); */
-/*     } */
-
-/*     @media screen and (min-width: 1000px) { */
-/*         .docker-container-list .item { */
-/*             flex: 0 0 calc(33% - 20px); */
-/*         } */
-
-/*         @media screen and (min-width: 1400px) { */
-/*             .docker-container-list .item { */
-/*                 flex: 0 0 calc(25% - 20px); */
-/*             } */
-/*         } */
-
-/*     } */
-/* } */
